@@ -1,0 +1,57 @@
+{
+  "id": "django-restapi",
+  "title": "Règles Django - REST API",
+  "description": "Standard pour une API REST Django + Django REST Framework.",
+  "scope": {
+    "stack": "django",
+    "type": "restapi",
+    "version": "1.0.0"
+  },
+  "tags": [
+    "django",
+    "drf",
+    "api"
+  ],
+  "checklists": [
+    {
+      "id": "apps-structure",
+      "title": "Structure des apps",
+      "priority": "high",
+      "items": [
+        {
+          "id": "apps-split",
+          "text": "Le projet est découpé en apps logiques (users, billing, core…) plutôt qu’une seule app monolithique.",
+          "phase": "init"
+        },
+        {
+          "id": "settings-split",
+          "text": "Les settings sont découpés par environnement (base, dev, prod) avec secrets hors du code.",
+          "phase": "init"
+        }
+      ]
+    },
+    {
+      "id": "drf-best-practices",
+      "title": "Bonnes pratiques DRF",
+      "priority": "medium",
+      "items": [
+        {
+          "id": "viewsets",
+          "text": "Les endpoints CRUD utilisent des ViewSets et des routers DRF quand c’est pertinent.",
+          "phase": "dev"
+        },
+        {
+          "id": "serializers",
+          "text": "Les serializers sont responsables de la validation métier de base et documentés.",
+          "phase": "dev"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "DRF docs",
+      "url": "https://www.django-rest-framework.org/"
+    }
+  ]
+}

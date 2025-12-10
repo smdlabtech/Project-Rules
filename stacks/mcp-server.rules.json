@@ -1,0 +1,52 @@
+{
+  "id": "mcp-server",
+  "title": "Règles MCP Server (Cursor, agents IA)",
+  "description": "Standard pour un serveur MCP exposé à Cursor IDE, basé sur une API HTTP.",
+  "scope": {
+    "stack": "mcp",
+    "type": "server",
+    "version": "1.0.0"
+  },
+  "tags": [
+    "mcp",
+    "cursor",
+    "agents-ia"
+  ],
+  "checklists": [
+    {
+      "id": "config-mcp",
+      "title": "Configuration MCP",
+      "priority": "high",
+      "items": [
+        {
+          "id": "cursor-config",
+          "text": "Un fichier `.cursor/mcp.json` (dans le projet cible) décrit le serveur, ses outils et son URL.",
+          "phase": "init"
+        },
+        {
+          "id": "tools-sync",
+          "text": "Les outils déclarés dans la config MCP sont synchronisés avec les endpoints réellement exposés.",
+          "phase": "dev"
+        }
+      ]
+    },
+    {
+      "id": "api-contract",
+      "title": "Contrat API",
+      "priority": "high",
+      "items": [
+        {
+          "id": "schemas",
+          "text": "Les payloads d’entrée et de sortie des endpoints sont clairement définis (pydantic / JSON schemas).",
+          "phase": "dev"
+        },
+        {
+          "id": "health",
+          "text": "Un endpoint de healthcheck permet de tester la disponibilité rapide du serveur.",
+          "phase": "dev"
+        }
+      ]
+    }
+  ],
+  "links": []
+}

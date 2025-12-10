@@ -1,0 +1,41 @@
+{
+  "id": "fastapi-webapp",
+  "title": "Règles FastAPI - WebApp",
+  "description": "Standard pour une application web FastAPI (API + templates/static).",
+  "scope": {
+    "stack": "fastapi",
+    "type": "webapp",
+    "version": "1.0.0"
+  },
+  "tags": [
+    "fastapi",
+    "webapp",
+    "jinja2",
+    "fullstack"
+  ],
+  "checklists": [
+    {
+      "id": "frontend-integration",
+      "title": "Intégration frontend",
+      "priority": "medium",
+      "items": [
+        {
+          "id": "templates",
+          "text": "Les templates HTML sont organisés dans `app/templates` avec héritage (base.html).",
+          "phase": "dev"
+        },
+        {
+          "id": "static-files",
+          "text": "Les fichiers statiques (CSS/JS) sont servis depuis `app/static` via `StaticFiles`.",
+          "phase": "dev"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "FastAPI - Templates",
+      "url": "https://fastapi.tiangolo.com/advanced/templates/"
+    }
+  ]
+}

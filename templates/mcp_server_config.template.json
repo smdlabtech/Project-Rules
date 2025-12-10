@@ -1,0 +1,22 @@
+{
+  "server": {
+    "name": "your-mcp-server-name",
+    "description": "Serveur MCP pour exposer des outils aux IDE/clients compatibles.",
+    "version": "1.0.0",
+    "workspace": "./workspace",
+    "llm_model": "gpt-4o",
+    "log_level": "INFO"
+  },
+  "tools": [],
+  "agents": [],
+  "pipeline": {
+    "type": "reflect-then-act",
+    "steps": []
+  },
+  "permissions": {},
+  "audit_hooks": {
+    "log_inputs": true,
+    "log_outputs": true,
+    "log_to_file": "./workspace/logs/audit.json"
+  }
+}

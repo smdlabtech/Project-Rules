@@ -1,0 +1,39 @@
+{
+  "id": "django-webapp",
+  "title": "Règles Django - WebApp",
+  "description": "Standard pour une application web Django classique (templates + views).",
+  "scope": {
+    "stack": "django",
+    "type": "webapp",
+    "version": "1.0.0"
+  },
+  "tags": [
+    "django",
+    "webapp"
+  ],
+  "checklists": [
+    {
+      "id": "templates",
+      "title": "Templates & UX",
+      "priority": "medium",
+      "items": [
+        {
+          "id": "base-template",
+          "text": "Un template de base `base.html` définit le layout global et les blocs principaux.",
+          "phase": "dev"
+        },
+        {
+          "id": "static",
+          "text": "Les fichiers statiques sont gérés via `collectstatic` et livrés derrière un reverse proxy / CDN en prod.",
+          "phase": "preprod"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Django docs",
+      "url": "https://docs.djangoproject.com/"
+    }
+  ]
+}

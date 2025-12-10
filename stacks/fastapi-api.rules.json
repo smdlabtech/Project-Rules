@@ -1,0 +1,93 @@
+{
+  "id": "fastapi-api",
+  "title": "Règles FastAPI - Backend API",
+  "description": "Standard d’architecture, qualité et sécurité pour un backend FastAPI prod-ready.",
+  "scope": {
+    "stack": "fastapi",
+    "type": "api",
+    "version": "1.0.0"
+  },
+  "tags": [
+    "fastapi",
+    "backend",
+    "api",
+    "python",
+    "prod-ready"
+  ],
+  "checklists": [
+    {
+      "id": "structure",
+      "title": "Structure du projet",
+      "priority": "high",
+      "items": [
+        {
+          "id": "layout",
+          "text": "Le projet suit un layout structuré : `app/main.py`, `app/api`, `app/core`, `app/models`, `app/schemas`, `app/services`, `app/config`.",
+          "phase": "init"
+        },
+        {
+          "id": "config",
+          "text": "La configuration est centralisée via une classe Settings (pydantic) et un fichier `.env` jamais commité.",
+          "phase": "init"
+        }
+      ]
+    },
+    {
+      "id": "qualite-code",
+      "title": "Qualité & tests",
+      "priority": "medium",
+      "items": [
+        {
+          "id": "typing",
+          "text": "Toutes les fonctions exposées (services, endpoints) sont typées (annotations Python).",
+          "phase": "dev"
+        },
+        {
+          "id": "tests",
+          "text": "Des tests unitaires et d’intégration existent pour les endpoints critiques (pytest + httpx).",
+          "phase": "dev"
+        }
+      ]
+    },
+    {
+      "id": "securite",
+      "title": "Sécurité",
+      "priority": "high",
+      "items": [
+        {
+          "id": "auth",
+          "text": "Les endpoints sensibles utilisent un schéma d’authentification (JWT/OAuth2) correctement configuré.",
+          "phase": "dev"
+        },
+        {
+          "id": "headers",
+          "text": "Les headers de sécurité basiques sont mis en place (X-Content-Type-Options, X-Frame-Options, etc. via middleware).",
+          "phase": "dev"
+        }
+      ]
+    },
+    {
+      "id": "observabilite",
+      "title": "Observabilité",
+      "priority": "medium",
+      "items": [
+        {
+          "id": "logs",
+          "text": "Les logs structurés sont configurés (JSON, niveau INFO en prod) et incluent un `request_id`/`correlation_id`.",
+          "phase": "preprod"
+        },
+        {
+          "id": "metrics",
+          "text": "Des métriques sont exposées (Prometheus / OpenTelemetry) pour suivre erreurs, QPS et latence.",
+          "phase": "preprod"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "FastAPI docs",
+      "url": "https://fastapi.tiangolo.com/"
+    }
+  ]
+}
